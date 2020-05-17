@@ -5,7 +5,7 @@
   "main": "src/server.ts",
   "type": "module",
   "scripts": {
-    "test": "nyc mocha --require ts-node/register \"**/*.test.ts\"",
+    "test": "nyc mocha --require ts-node/register \"src/**/*.test.ts\"",
     "coverage": "nyc report"
   },
   "author": "",
