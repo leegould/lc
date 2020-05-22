@@ -49,9 +49,33 @@ describe('Symmetric Tree Iterative', () => {
         expect(result).to.be.true;
     });
 
+    it('runs as expected with unbalanced nodes', () => {
+        const root = arrayToTree([1,2]);
+
+        const result = isSymmetricIterative(root as TreeNode);
+
+        expect(result).to.be.false;
+    });
+
+    it('runs as expected with unbalanced nodes beyond root', () => {
+        const root = arrayToTree([1,2,2,3,4,4]);
+
+        const result = isSymmetricIterative(root as TreeNode);
+
+        expect(result).to.be.false;
+    });
+
     it('runs as expected with false example', () => {
         const root = arrayToTree([1,2,2,null,3,null,3]);
         const result = isSymmetricIterative(root as TreeNode);
+
+        expect(result).to.be.false;
+    });
+
+    it('runs as expected with false example', () => {
+        const root = arrayToTree([1,2]) as TreeNode;
+        root.right = null;
+        const result = isSymmetricIterative(root);
 
         expect(result).to.be.false;
     });

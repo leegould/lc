@@ -5,7 +5,7 @@ export function isSymmetric(root: TreeNode) {
         if (left === null || right === null) {
             return left === right;
         }
-        if (left?.val !== right?.val) {
+        if (left.val !== right.val) {
             return false;
         }
         return compare(left.left, right.right) && compare(left.right, right.left);
@@ -40,18 +40,18 @@ export function isSymmetricIterative(root: TreeNode) {
     }
 
     while(stack.length > 0) {
-        if (stack.length % 2 !== 0) {
+        const left: TreeNode | null | undefined = stack.pop();
+        const right: TreeNode | null | undefined = stack.pop();
+
+        if (!left || !right) {
+            return left === right;
+        }
+
+        if (left.val !== right.val) {
             return false;
         }
 
-        const left: TreeNode | null = stack.pop() || null;
-        const right: TreeNode | null = stack.pop() || null;
-
-        if (left?.val !== right?.val) {
-            return false;
-        }
-
-        if (!checkOrFillStack(left?.left, right?.right) || !checkOrFillStack(left?.right, right?.left)) {
+        if (!checkOrFillStack(left.left, right.right) || !checkOrFillStack(left?.right, right?.left)) {
             return false;
         }
     }

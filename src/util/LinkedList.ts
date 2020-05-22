@@ -8,7 +8,7 @@ export class ListNode {
     }
 }
 
-export function createLinkedList(values: any[]): ListNode {
+export function arrayToLinkedList(values: any[]): ListNode | null {
     let first: ListNode | null = null;
     let head: ListNode | null = null;
     for(let i = 0; i < values.length; i++) {
@@ -23,7 +23,19 @@ export function createLinkedList(values: any[]): ListNode {
     if (first) {
         return first;
     }
-    throw new Error('no values');
+    return null;
+}
+
+export function linkedListToArray(node: ListNode) {
+    const values = [];
+
+    let n: ListNode | null = node;
+    while (n !== null) {
+        values.push(n.val);
+        n = n.next;
+    }
+
+    return values;
 }
 
 export function compareTwoListsByVal(l1: ListNode, l2: ListNode) {
@@ -39,15 +51,15 @@ export function compareTwoListsByVal(l1: ListNode, l2: ListNode) {
     return true;
 }
 
-export function dumpToConsole(listNode: ListNode) {
-    let debugstr = '';
-    let node: ListNode | null = listNode;
-    while(node !== null) {
-        if (debugstr !== '') {
-            debugstr += '->';
-        }
-        debugstr += node.val;
-        node = node.next;
-    }
-    console.log('debug', debugstr);
-}
+// export function dumpToConsole(listNode: ListNode) {
+//     let debugstr = '';
+//     let node: ListNode | null = listNode;
+//     while(node !== null) {
+//         if (debugstr !== '') {
+//             debugstr += '->';
+//         }
+//         debugstr += node.val;
+//         node = node.next;
+//     }
+//     console.log('debug', debugstr);
+// }
