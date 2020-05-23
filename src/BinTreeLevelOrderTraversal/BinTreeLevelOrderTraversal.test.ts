@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { levelOrderBottom } from './BinTreeLevelOrderTraversal';
+import { levelOrderBottom } from './binTreeLevelOrderTraversal';
 import { TreeNode, arrayToTree } from '../util/BinaryTree';
 
 describe('Binary Tree Level Order Traversal 2', () => {
