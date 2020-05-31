@@ -4,7 +4,6 @@ import { arrayToLinkedList, linkedListToArray } from '../util/LinkedList';
 
 describe('addTwoNumbers', () => {
     it('runs as expected', () => {
-        
         const number1 = [2,4,3];
         const LL1 = arrayToLinkedList(number1);
 
@@ -18,4 +17,20 @@ describe('addTwoNumbers', () => {
 
         expect(resultArr).to.deep.equal(expected);
     });
+
+    it('runs as expected with large number', () => {
+        
+        const number1 = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1];
+        const LL1 = arrayToLinkedList(number1);
+
+        const number2 = [5,6,4];
+        const LL2 = arrayToLinkedList(number2);
+
+        const expected = [6,6,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1];
+
+        const result = addTwoNumbers(LL1, LL2);
+        const resultArr = linkedListToArray(result);
+
+        expect(resultArr).to.deep.equal(expected);
+    });  
 });
