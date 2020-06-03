@@ -9,6 +9,12 @@ describe('excelSheetColNum', () => {
         const expected = "A";
         expect(result).to.equal(expected);
     });
+    it('runs as expected with zero', () => {
+        const input = 0;
+        const result = convertToTitle(input);
+        const expected = "";
+        expect(result).to.equal(expected);
+    });
     it('runs as expected with multiple letters', () => {
         const input = 28;
         const result = convertToTitle(input);

@@ -8,7 +8,12 @@ describe('excelSheetColNum', () => {
         const expected = 1;
         expect(result).to.equal(expected);
     });
-
+    it('runs as expected with empty', () => {
+        const input = "";
+        const result = titleToNumber(input);
+        const expected = 0;
+        expect(result).to.equal(expected);
+    });
     it('runs as expected with multiple columns', () => {
         const input = "AB";
         const result = titleToNumber(input);

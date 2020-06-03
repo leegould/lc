@@ -18,6 +18,30 @@ describe('addTwoNumbers', () => {
         expect(resultArr).to.deep.equal(expected);
     });
 
+    it('runs as expected with smaller first number', () => {
+        const number1 = [3];
+        const LL1 = arrayToLinkedList(number1);
+
+        const number2 = [5,6,4];
+        const LL2 = arrayToLinkedList(number2);
+
+        const expected = [8,6,4];
+
+        const result = addTwoNumbers(LL1, LL2);
+        const resultArr = linkedListToArray(result);
+
+        expect(resultArr).to.deep.equal(expected);
+    });
+
+    it('runs as expected with nulls', () => {
+        const expected = [0];
+
+        const result = addTwoNumbers(null, null);
+        const resultArr = linkedListToArray(result);
+
+        expect(resultArr).to.deep.equal(expected);
+    });
+
     it('runs as expected with large number', () => {
         
         const number1 = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1];
