@@ -10,28 +10,25 @@ export function levelOrder(root: TreeNode | null) {
         return [];
     }
     const out = [];
-    const queue: (TreeNode | null)[] = [root];
+    const queue = [root];
 
     while (queue.length > 0) {
         const lvl = [];
         const len = queue.length;
         for(let i = 0; i < len;i++) {
-            let node = queue.shift();
-            if (node) {
-                if (node.val !== null) {
-                    lvl.push(node.val);
-                }
-                if (node.left) {
-                    queue.push(node.left);
-                }
-                if (node.right) {
-                    queue.push(node.right);
-                }
+            let node = queue.shift() as TreeNode;
+            if (node.val !== null) {
+                lvl.push(node.val);
+            }
+            if (node.left) {
+                queue.push(node.left);
+            }
+            if (node.right) {
+                queue.push(node.right);
             }
         }
         out.push(lvl);
     }
 
-    console.log(JSON.stringify(out));
     return out;
 }

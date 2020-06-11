@@ -10,7 +10,7 @@ describe('Robot return to origin', () => {
     });
 
     it('runs as expected when false', () => {
-        const input = "LL";
+        const input = "LLR";
         const expected = false;
         const result = judgeCircle(input);
         expect(result).to.equal(expected);
