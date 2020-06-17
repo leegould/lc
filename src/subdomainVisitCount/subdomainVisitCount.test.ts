@@ -12,7 +12,6 @@ describe('Subdomain Visit Count', () => {
         const input = ["900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"];
         const expected = ['900 google.mail.com','901 mail.com','951 com','50 yahoo.com','1 intel.mail.com','5 wiki.org','5 org'];
         const result = subdomainVisits(input);
-        console.log('result', JSON.stringify(result));
         expect(result).to.deep.equal(expected);
     });
 });
