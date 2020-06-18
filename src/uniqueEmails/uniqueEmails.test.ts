@@ -7,4 +7,9 @@ describe('Unique Emails', () => {
         const result = numUniqueEmails(input);
         expect(result).to.equal(2);
     });
+    it('runs as expected with simple example', () => {
+        const input = ["test@leetcode.com"];
+        const result = numUniqueEmails(input);
+        expect(result).to.equal(1);
+    });
 });
