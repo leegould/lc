@@ -11,7 +11,6 @@ export function buildArray(target: number[], n: number) {
 
     for(let i = 0; i < target.length;i++) {
         const t = target[i];
-        console.log('target', t, last);
         if (t - last > 1) {
             for(let j = 1; j < t - last;j++) {
                 result.push('Push');

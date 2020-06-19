@@ -14,7 +14,5 @@ export function numUniqueEmails(emails: string[]) {
         uniques.add(cleaned);
     }
 
-    console.log('uniques', uniques);
-
     return uniques.size;
 }
