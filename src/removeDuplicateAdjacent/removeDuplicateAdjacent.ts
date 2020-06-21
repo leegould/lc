@@ -1,26 +1,22 @@
 /** Remove Duplicate Adjacents
  * @param s the string
  * @returns the unique string
- * @description runtime O()
+ * @description runtime O(len(s))
  */
 export function removeDuplicates(s: string) {
     if (!s || s.length < 1) {
         return s;
     }
 
-    let arr = s.split('');
-    let loop = true;
+    const stack = [];
 
-    while (loop) {
-        loop = false;
-        for(let i = 0; i < arr.length - 1;i++) {
-            if (arr[i] === arr[i + 1]) {
-                arr.splice(i, 2);
-                loop = true;
-                break;
-            }
+    for(let i = 0; i < s.length;i++) {
+        if (s[i] !== stack[stack.length - 1]) {
+            stack.push(s[i]);
+        } else {
+            stack.pop();
         }
     }
 
-    return arr.join('');
+    return stack.join('');
 }
