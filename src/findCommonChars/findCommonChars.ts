@@ -5,28 +5,19 @@
  * @description runtime O()
  */
 export function commonChars(arr: string[]) {
-    const map = new Map();
+    let first = arr[0].split('');
 
-    for(let i = 0; i < arr.length;i++) {
-        for(let j = 0; j < arr[i].length;j++) {
-            const char = arr[i][j];
-            if (map.has(char)) {
-                map.set(char, map.get(char) + 1);
-            } else {
-                map.set(char, 1);
+    for(let i = 1; i < arr.length;i++) {
+        const str = arr[i].split('');
+        first = first.filter(char => {
+            let idx = str.indexOf(char);
+            if (idx > -1) {
+                str[idx] = 'done';
+                return true;
             }
-        }
+            return false;
+        })
     }
 
-    console.log('map', map);
-    const out = [];
-
-    for (let [key, value] of map) {
-        const count = Math.floor(value / arr.length);
-        for(let i = 0; i < count;i++) {
-            out.push(key);
-        }
-    }
-
-    return out;
+    return first;
 }
