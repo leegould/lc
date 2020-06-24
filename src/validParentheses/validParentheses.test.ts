@@ -32,4 +32,10 @@ describe('Valid Parentheses', () => {
         const expected = true;
         expect(result).to.equal(expected);
     });
+    it('It runs as expected with closing example', () => {
+        const input = ")";
+        const result = isValid(input);
+        const expected = false;
+        expect(result).to.equal(expected);
+    });
 });

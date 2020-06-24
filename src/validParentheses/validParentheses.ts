@@ -2,7 +2,7 @@
  * Valid Parentheses checker
  * @param s the string to check
  * @returns true if valid, false otherwise
- * @description runtime O()
+ * @description runtime O(len(s))
  */
 export function isValid(s: string) {
     const stack: string[] = [];
