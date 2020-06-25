@@ -30,4 +30,19 @@ describe('numberOfIslands', () => {
 
         expect(result).to.equal(expected);
     });
+
+    it('runs as expected with double start case', () => {
+        const input = [
+            ['0','1','0','0','0'],
+            ['0','1','0','1','0'],
+            ['1','1','1','1','0'],
+            ['0','0','0','0','0'],
+        ];
+
+        const expected = 1;
+
+        const result = numIslands(input);
+
+        expect(result).to.equal(expected);
+    });
 });
