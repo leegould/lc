@@ -2,12 +2,12 @@
  * Number of islands in a grid
  * @param grid the grid
  * @returns number of islands
- * @description runtime O()
+ * @description runtime O(n + island size)
  */
 export function numIslands(grid: string[][]) {
     let count = 0;
 
-    function dfs(x: number, y: number) {
+    function search(x: number, y: number) {
         if (grid[x][y] === '1') {
             grid[x][y] = '0';
         } else {
@@ -15,16 +15,16 @@ export function numIslands(grid: string[][]) {
         }
 
         if (x < grid.length - 1) {
-            dfs(x + 1, y);
+            search(x + 1, y);
         }
         if (y < grid[x].length - 1) {
-            dfs(x, y + 1);
+            search(x, y + 1);
         }
         if (x > 0) {
-            dfs(x - 1, y);
+            search(x - 1, y);
         }
         if (y > 0) {
-            dfs(x, y - 1);
+            search(x, y - 1);
         }
     }
 
@@ -33,7 +33,7 @@ export function numIslands(grid: string[][]) {
         for (let j = 0;j < row.length;j++) {
             if(grid[i][j] === '1') {
                 count++;
-                dfs(i,j);
+                search(i,j);
             }
         }
     }
