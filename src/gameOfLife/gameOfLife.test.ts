@@ -19,9 +19,6 @@ describe('gameOfLife', () => {
 
         const result = gameOfLife(input);
 
-        console.log('initial', input);
-        console.log('expected', expected);
-        console.log('result', result);
         expect(result).to.deep.equal(expected);
     });
 });
