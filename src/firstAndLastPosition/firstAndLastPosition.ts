@@ -3,7 +3,7 @@
  * @param nums list of numbers
  * @param target number to search for
  * @returns the first and last index of the target
- * @description runtime O()
+ * @description runtime O(log n)
  */
 export function searchRange(nums: number[], target: number) {
     const indexes = [-1,-1];
