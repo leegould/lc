@@ -1,31 +1,21 @@
 import { ListNode } from "../util/LinkedList";
 
 export function reverseBetween(head: ListNode | null, start: number, end: number) {
-    let holder = new ListNode(0);
-    holder.next = head;
-    let pre: ListNode | null = holder;
-
-    for(let i = 0;i < start - 1;i++) {
-        if (pre) {
-            pre = pre.next;
+    let nodes = [];
+    let node = head;
+    for(let i = 1;i <= end;i++){
+        if(i >= start){
+            nodes.push(node);
         }
+        node = node?.next || null;
     }
-
-    let startnode = pre?.next || null;
-    let post = startnode?.next || null;
-
-    for(let i = 0;i < start - end;i++) {
-        if (startnode) {
-            startnode.next = post?.next || null;
-        }
-        if (post) {
-            post.next = pre?.next || null;
-        }
-        if (pre) {
-            pre.next = post;
-        }
-        post = startnode?.next || null;
+    var mid = Math.floor(nodes.length / 2);
+    for(let i = 0;i < mid;i++){
+        const node1 = nodes[i] as ListNode;
+        const node2 = nodes[nodes.length - i - 1] as ListNode;
+        const tmp = node1.val;
+        node1.val = node2.val;
+        node2.val = tmp;
     }
-
     return head;
 }
