@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { arrayToLinkedList, compareTwoListsByVal, ListNode, linkedListToArray } from '../util/LinkedList';
+import { arrayToLinkedList, compareTwoListsByVal, ListNode } from '../util/LinkedList';
 import { reverseBetween } from './reverseLinkedList2';
 
 describe('reverseLinkedList2', () => {
@@ -10,8 +10,6 @@ describe('reverseLinkedList2', () => {
         const expected = arrayToLinkedList([1,4,3,2,5]) as ListNode;
         const result = reverseBetween(ll, start, end) as ListNode;
 
-        console.log('result', linkedListToArray(result));
-        
         expect(compareTwoListsByVal(result, expected)).to.be.true;
     });
 });
