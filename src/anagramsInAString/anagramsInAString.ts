@@ -17,22 +17,37 @@ export function findAnagrams(s: string, p: string) {
         return chars;
     }
 
-    function mapMatch(map1: Map<string, number>, map2: Map<string, number>) {
-        for(let m1 of map1.entries()) {
-            if (!map2.has(m1[0]) || map2.get(m1[0]) !== m1[1]) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     const pmap = countCharsInStr(p);
 
-    for(let i = 0; i < (s.length - p.length) + 1;i++) {
-        const smap = countCharsInStr(s.slice(i, i + p.length));
-        if (mapMatch(pmap, smap)) {
-            indicies.push(i);
+
+    let count = 0;
+    let l = 0;
+    let r = 0;
+
+    while (r < s.length) {
+        const rchar = s.charAt(r);
+        if (pmap.has(rchar)) {
+            if (pmap.get(rchar) >= 1) {
+                count++;
+            }
+            pmap.set(rchar, pmap.get(rchar) - 1);
         }
+
+        if (count === p.length) {
+            indicies.push(l);
+        }
+
+        if (r - l + 1 === p.length) {
+            const lchar = s.charAt(l);
+            if (pmap.has(lchar)) {
+                if (pmap.get(lchar) >= 0) {
+                    count--;
+                }
+                pmap.set(lchar, pmap.get(lchar) + 1);
+            }
+            l++;
+        }
+        r++;
     }
 
     return indicies;
