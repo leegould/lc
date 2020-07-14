@@ -7,16 +7,13 @@ import { TreeNode } from "../util/BinaryTree";
  * @description runtime O()
  */
 export function invertTree(root: TreeNode | null): TreeNode | null {
-    function invert(node: TreeNode | null) {
-        if(!node || (!node.left && !node.right)) {
-            return node;
-        }
-        const temp = invert(node.left);
-        node.left = invert(node.right);
-        node.right = temp;
-        return node;
+    if (!root) {
+        return root;
     }
-
-    invert(root);
+    
+    const temp = invertTree(root.left);
+    root.left = invertTree(root.right);
+    root.right = temp;
+    
     return root;
 };
