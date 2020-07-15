@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "nyc mocha --parallel --require ts-node/register \"src/**/*.test.ts\"",
+    "testic": "nyc mocha --parallel --require ts-node/register \"src/ic/**/*.test.ts\"",
     "coverage": "nyc report"
   },
   "author": "",
