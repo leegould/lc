@@ -3,7 +3,7 @@
  * @param m 
  * @param n 
  * @returns the number of unique paths
- * @description runtime O()
+ * @description runtime O(m * n) space O(m * n)
  */
 export function uniquePaths(m: number, n: number): number {
     const grid: number[][] = Array.from(Array(m), () => new Array(n));
