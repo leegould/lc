@@ -3,7 +3,7 @@
  * @param numBottles the number of bottles
  * @param numExchange the number you can exchange
  * @returns the number of total drinkables
- * @description runtime O() space O()
+ * @description runtime O(lg n) space O(1)
  */
 export function numWaterBottles(numBottles: number, numExchange: number): number {
     let drunk = numBottles;
