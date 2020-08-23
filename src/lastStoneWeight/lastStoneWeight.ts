@@ -19,7 +19,6 @@ export function lastStoneWeight(stones: number[]): number {
             }
             stones.splice(idx, 0, diff);
         }
-        console.log('stones', stones);
     }
     return stones[0] || 0;
 };

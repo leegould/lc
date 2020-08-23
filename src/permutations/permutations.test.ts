@@ -63,8 +63,6 @@ describe('permutations', () => {
 
         const result = permute(input);
 
-        // console.log('permutations.result', result.length, expected.length, result);
-
         expect(result).to.deep.equal(expected);
     });
 });

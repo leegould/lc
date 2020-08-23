@@ -17,7 +17,6 @@ export function sortedArrayToBST(nums: number[]) {
         }
 
         const mid = Math.ceil((lower + upper) / 2);
-        // console.log('mid', lower, mid, upper);
         const node = new TreeNode(nums[mid]);
         node.left = appendChildren(lower, mid - 1);
         node.right = appendChildren(mid + 1, upper);
