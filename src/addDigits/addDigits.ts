@@ -2,7 +2,7 @@
  * Add Digits
  * @param num the number
  * @returns the result of adding until there is one digit
- * @description runtime O() space O()
+ * @description runtime O(lg n) space O(1)
  */
 export function addDigits(num: number): number {
     let n = num;
