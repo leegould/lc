@@ -12,10 +12,8 @@ export function addDigits(num: number): number {
         while (n > 0) {
             sum += n % 10;
             n = Math.floor(n / 10);
-            console.log('inner', sum, n);
         }
         n = sum;
-        console.log('outer', n);
     }
 
     return n;
