@@ -5,7 +5,7 @@ import { TreeNode } from "../util/BinaryTree";
  * @param root The root node
  * @param target the target value
  * @returns the root
- * @description runtime O() space O()
+ * @description runtime O(n) space O()
  */
 export function removeLeafNodes(root: TreeNode | null, target: number): TreeNode | null {
     if (!root) return null;
