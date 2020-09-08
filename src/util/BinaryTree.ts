@@ -51,11 +51,11 @@ export function treeToArray(node: TreeNode | null) {
 
     while(queue.length > 0) {
         const n: TreeNode = queue.shift();
-        output.push(n.val);
-        if (n.left !== null) {
+        output.push(n ? n.val : null);
+        if (n && n.left !== null) {
             queue.push(n.left);
         }
-        if (n.right !== null) {
+        if (n && n.right !== null) {
             queue.push(n.right);
         }
     }
