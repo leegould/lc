@@ -20,7 +20,5 @@ export function numSpecialEquivGroups(A: string[]): number {
         set.add([...even.sort() , ...odd.sort()].join(''));
     }
 
-    console.log('set', set);
-
     return set.size;
 };
