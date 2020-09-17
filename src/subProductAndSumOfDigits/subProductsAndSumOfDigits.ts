@@ -15,6 +15,5 @@ export function subtractProductAndSum(n: number): number {
         n = Math.floor(n / 10);
     }
 
-    console.log('blah', product, sum);
     return product - sum;
 };
